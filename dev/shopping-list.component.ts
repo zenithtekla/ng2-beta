@@ -8,17 +8,21 @@ import {Component} from "angular2/core";
     <li 
       *ngFor="#item of items"
       (click) = "onItemClicked(item)"
-      >{{ item }}</li>
+      >{{ item.name }}</li>
     </ul>
-      <input type="text" [(ngModel)]="selectedItem">
+      <input type="text" [(ngModel)]="selectedItem.name">
   `
   /*  * means, structured directive and is required for condition, method to change the document
       # means local variable
       parentheses means events   */
 })
 export class ShoppingListComponent {
-  public items = ["Milk", "Sugar", "Bread"];
-  public selectedItem;
+  public items = [
+    {name: "Milk"},
+    {name: "Sugar"},
+    {name: "Bread"},
+  ];
+  public selectedItem = {name: ""};
 
   onItemClicked(item){
     this.selectedItem = item;
