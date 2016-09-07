@@ -15,7 +15,17 @@ import {Component} from "angular2/core";
       <br>
       <label for="addItem">Add Item</label><input type="text" #item id="addItem">
       <button (click) = "onAddItem(item)">Add Item</button>
-  `
+      <br>
+      Hi, I'm {{name}}, Angular2-Meteor <span [class.is-awesome]="inputElement.value==='yes'">is awesome!</span>
+      <br>
+      <br>
+      Is it awesome?
+      <input type="text" #inputElement (keyup)="0">
+  `,
+  styleUrls: ['src/css/custom.css']
+  // styles: ['.class{}'] // for simple inline styling
+
+
   /*  * means, structured directive and is required for condition, method to change the document
       # means local variable
       parentheses means events   */
@@ -37,4 +47,7 @@ export class ShoppingListComponent {
   onDeleteItem(){
     this.items.splice(this.items.indexOf(this.selectedItem),1);
   }
+
+  public name = "Piper";
+
 }
