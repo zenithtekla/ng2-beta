@@ -1,15 +1,1 @@
 <h2>This content is from Test component</h2>
-<ul>
-  <li *ngFor="#contact of contacts"
-    (click)="onSelect(contact)"
-    [class.clicked]="showDetail === true"
-  >
-    {{contact.firstName}} {{contact.lastName}}
-  </li>
-</ul>
-<input [(ngModel)]="selectedContact.firstName" type="text">
-<div>
-  Phone Number: {{selectedContact.phone}}<br>
-  E-Mail: {{selectedContact.email}}
-</div>
-
